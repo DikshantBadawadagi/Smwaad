@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
@@ -12,4 +13,20 @@ const userSchema = new mongoose.Schema({
     posts:[{type:mongoose.Schema.Types.ObjectId, ref:'Post'}],
     bookmarks:[{type:mongoose.Schema.Types.ObjectId, ref:'Post'}]
 },{timestamps:true});
+=======
+import mongoose from "mongoose";
+
+const userSchema = new mongoose.Schema({
+    username:{type:String, required:true, unique:true},
+    email:{type:String,required:true,unique:true},
+    password:{type:String,required:true},
+    profilePicture:{type:String,default:''},
+    bio:{type:String, default:''},
+    gender:{type:String,enum:['male','female']},
+    followers:[{type:mongoose.Schema.Types.ObjectId, ref:'User'}],
+    following:[{type:mongoose.Schema.Types.ObjectId, ref:'User'}],
+    posts:[{type:mongoose.Schema.Types.ObjectId, ref:'Post'}],
+    bookmarks:[{type:mongoose.Schema.Types.ObjectId, ref:'Post'}]
+},{timestamps:true});
+>>>>>>> 6fa5ee436a07f107cb4d29c67bd2626acd18c259
 export const User = mongoose.model('User', userSchema);
