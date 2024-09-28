@@ -13,6 +13,7 @@ import { setSocket } from './redux/socketSlice'
 import { setOnlineUsers } from './redux/chatSlice'
 import { setLikeNotification } from './redux/rtnSlice'
 import ProtectedRoutes from './components/ProtectedRoutes'
+import TextSign from './components/TextSign'
 
 
 const browserRouter = createBrowserRouter([
@@ -36,6 +37,10 @@ const browserRouter = createBrowserRouter([
         path: '/chat',
         element: <ProtectedRoutes><ChatPage /></ProtectedRoutes>
       },
+      {
+        path: '/text-to-sign',
+        element: <ProtectedRoutes><TextSign /></ProtectedRoutes>
+      }
     ]
   },
   {
