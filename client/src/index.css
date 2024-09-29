@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+  font-family:'Gotham Rounded';
+}
+body{
+  background-image: url("./bg_image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header {
+  margin: 10px;
+  width: auto;
+  background-color: #01a390;
+  border-radius: 5px;
+  box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+/* .color{
+  background-color: #050706;
+} */
+.body-cards {
+  width: auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.card {
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 20px;
+  cursor: pointer;
+}
+/* .QuestionBox{ */
+.QuestionBox {
+  text-align: center;
+  /* max-height: 50px; */
+}
+#b1,#b2{
+  background-color: #55b1f3;
+  border-radius: 25px;
+}
+#b3 {
+  /* margin-top: 40px;
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  color: black;
+  background-color: antiquewhite; */
+  background-color: black;
+  color: white;
+  margin: 5px auto 0px;
+  /* padding: auto; */
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  border: 4px solid #01a390;
+}
+#b3:hover{
+  background-color: black;
+  color: orange;
+  border-bottom: 4px solid orange;
+  transition: 4px 1s ease;
+}
+.card > img {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 50vh;
+}
+/* .home{
+  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alamy.com%2Fchildren-study-in-classroom-image445386299.html&psig=AOvVaw1Rt-1KLnHiPTnZ0HrXxC5Y&ust=1680080331011000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLj2pI2h_v0CFQAAAAAdAAAAABAE");
+} */
+
+.footer {
+  margin: 10px;
+  width: auto;
+  background-color: rgb(1, 163, 144);
+  border-radius: 5px;
+  box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
+  color: black;
+  font-weight: bold;
+}
+
+.correct {
+  box-shadow: -1px 4px 20px 14px green;
+}
+.wrong {
+  box-shadow: -1px 4px 20px 14px red;
+}
+.nav {
+  position: fixed;
+}

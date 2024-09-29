@@ -1,0 +1,98 @@
+.exercises{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+  }
+  .exercises .card {
+    display: flex;
+    max-width: 320px;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-radius: 0.5em;
+    color:black;
+    background-color: white;
+    box-shadow: 0 29px 38px -15px rgb(0 0 0 / 43%);
+  }
+  
+  .exercises .card-img {
+    width: 100%;
+    height: 200px;
+    border-radius: 0.3em;
+    background-position: center;
+    background-size: cover;
+  }
+  .card p .exercises-link{
+    /* text-decoration: none; */
+    color: black;
+  }
+  .exercises .card:nth-of-type(1) .card-img {
+    background-image: url('./before_after_logo.png');
+  }
+  
+  .exercises .card:nth-of-type(2) .card-img {
+    background-image: url('./greater_smaller_logo.jpg');
+  }
+  
+  .exercises .card:nth-of-type(3) .card-img {
+    background-image: url("./maths.jpg");
+  }
+  
+  .exercises .card:nth-of-type(4) .card-img {
+    background-image: url(https://images.unsplash.com/photo-1496429862132-5ab36b6ae330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80);
+  }
+  /* .exercises {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .exercises .card {
+    width: 24rem;
+    height: 36rem;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    color: rgb(240,240,240);
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+   
+    
+  }
+  .exercises img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+  }
+  
+
+  
+  .exercises .card:hover h2 {
+    inset: auto auto 220px 30px;
+    transition: inset .3s ease-out;
+  }
+  
+  .exercises .card:hover p, .card:hover a {
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+  }
+  
+  .exercises .card:hover img {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
+  
+  .exercises .material-symbols-outlined {
+    vertical-align: middle;
+  } */
+  

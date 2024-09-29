@@ -1,0 +1,116 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap";
+
+:root {
+  --color: rgb(63 63 63);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.home .parallax-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* color: white; */
+  /*  this is where the magic happens:  */
+  background-attachment: fixed;
+  background-image: url('./bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  row-gap: 4rem;
+
+  text-align: center;
+}
+
+.home .buffer {
+  width: 100%;
+  min-height: 10vh;
+  background-color: transparent;
+}
+
+.home .parallax-container2 {
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* backdrop-filter: blur(100px); */
+  background-position: 100%;
+  padding: 6rem 0;
+  background-image: url('./bg2.png');
+  background-color: #4a4d90;
+  gap: 1.6em;
+}
+
+.home .h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.home .p {
+  max-width: 52ch;
+  padding: 1em;
+  line-height: 1.5;
+  margin-bottom: 1px;
+}
+.home .bold-text{
+  font-weight:bold;
+}
+.home a {
+  display: inline-block;
+  padding: 1em 3.5em;
+  border-radius: 0.3em;
+  background-color: var(--color);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.home .h3 {
+  margin-top: 1em;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.home .card {
+  display: flex;
+  max-width: 320px;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 1rem;
+  border-radius: 0.5em;
+  color:black;
+  background-color: white;
+  box-shadow: 0 29px 38px -15px rgb(0 0 0 / 43%);
+}
+
+.home .card-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 0.3em;
+  background-position: center;
+  background-size: cover;
+}
+
+.home .card:nth-of-type(1) .card-img {
+  background-image: url(p3.jpg);
+}
+
+.home .card:nth-of-type(2) .card-img {
+  background-image: url(p4.jpg);
+}
+
+.home .card:nth-of-type(3) .card-img {
+  background-image: url(q1.png);
+}
+
+.home .card:nth-of-type(4) .card-img {
+  background-image: url(https://images.unsplash.com/photo-1496429862132-5ab36b6ae330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80);
+}

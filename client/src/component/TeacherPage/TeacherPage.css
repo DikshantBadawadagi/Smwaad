@@ -1,0 +1,71 @@
+.teacher{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-image: url('./teacher_bg.jpg');
+    background-size: contain;
+    /* margin-left: 50vw; */
+    height: 100vh;
+    width: 100vw;
+    /* margin-top: 0px; */
+    padding-top:10px;
+}
+.teacher .title{
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: white;
+    width: 48vw;
+    height: 50px;
+    border-radius: 8px;
+    margin-bottom: 150px;
+    padding-top:10px;
+    text-align: center;
+    border: 1px solid #0b0707;
+    box-shadow: 0 29px 30px -15px rgb(0 0 0 / 83%);
+}
+.teacher .teacherPara{
+    margin-left:10px;
+    text-align: center;
+}
+.teacher .teacherLink{
+    text-decoration: none;
+    border: 3px solid black;
+    padding: 1px;
+    border-radius: 5px;
+    color: black;
+}
+.teacher .card-grid{
+    display: flex;
+    flex-direction: row;
+}
+.teacher .card-grid .card{
+    display: flex;
+    max-width: 320px;
+    color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+    border-radius: 0.5em;
+  
+    background-color: white;
+    box-shadow: 0 29px 38px -15px rgb(0 0 0 / 43%);
+  
+}
+.teacher .card-grid .card .card-img{
+    width: 100%;
+    height: 200px;
+    border-radius: 0.3em;
+    background-position: center;
+    background-size: cover;
+  
+}
+.teacher .card-grid .card:nth-of-type(1) .card-img {
+    background-image: url('./maths.jpg');
+  }
+  
+.teacher .card-grid .card:nth-of-type(2) .card-img {
+    background-image: url('./info1.jpg');
+  }
+  

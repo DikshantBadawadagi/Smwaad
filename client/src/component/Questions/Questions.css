@@ -1,0 +1,57 @@
+.StudentData{
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.StudentData h1{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #443C68;
+}
+.StudentData .tableHeading{
+    background-color : #ffffff;
+    width: 90vw;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #0b0707;
+    box-shadow: 0 29px 30px -15px rgb(0 0 0 / 83%);
+    margin-bottom: 10px;
+    
+}
+table {
+    border-spacing: 0;
+    width: 90vw;
+    border: 1px solid #0b0707;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  li, p, a, td{
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  thead {
+    background-color: #443C68;
+    color: #fff;
+    font-size: large;
+  }
+  
+  th,
+  td {
+    border: 1px solid #443C68;
+    min-width: 30px;
+    padding: 15px;
+    line-height: 20px;
+  }
+  
+  td {
+    font-size: large;
+  }
