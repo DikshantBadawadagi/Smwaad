@@ -14,55 +14,47 @@ import { CheckIcon, HandIcon } from 'lucide-react';
 
 export default function PaymentGateway() {
   const [selectedPlan, setSelectedPlan] = useState('basic');
-  const [upiId, setUpiId] = useState(''); // State for UPI ID
-  const [userName, setUserName] = useState(''); // State for User Name
-
+  const [userName, setUserName] = useState(''); // User's Name
   const plans = [
     { id: 'basic', name: 'Basic', price: 999, color: 'bg-blue-100', features: ['100 signs', 'Basic tutorials', 'Community forum'] },
     { id: 'pro', name: 'Pro', price: 1999, color: 'bg-purple-100', features: ['500 signs', 'Advanced tutorials', 'Live chat support', 'Practice exercises'] },
     { id: 'premium', name: 'Premium', price: 2999, color: 'bg-pink-100', features: ['Unlimited signs', 'Expert tutorials', '24/7 video support', 'Personalized learning path'] },
   ];
 
-  // Generate the UPI payment link dynamically based on the selected plan
-  const generateUPILink = async () => {
-    const selected = plans.find(plan => plan.id === selectedPlan);
+  const selected = plans.find((plan) => plan.id === selectedPlan);
 
-    // Validate input fields
-    // if (!userName || !upiId) {
-    //   alert('Please enter your name and UPI ID.');
-    //   return;
-    // }
+  // Razorpay Payment Integration
+  const handlePayment = () => {
+    console.log('User Name:', userName); // Debugging: check what the value is
 
-    // Create a transaction object
-    const transaction = {
-      id: `TX${Date.now()}`, // Unique transaction ID
-      amount: selected.price,
-      plan: selected.name,
-      status: 'Pending', // Initial status
-      user: userName // Include user name
+    if (!userName.trim()) {
+      alert("Please enter your name before proceeding.");
+      return;
+    }
+
+    const options = {
+      key: 'YOUR_RAZORPAY_KEY', // Replace with your Razorpay Key ID
+      amount: selected.price, // Amount is in paise (i.e., 100 = ₹1)
+      currency: 'INR',
+      name: 'Sign Language Learning',
+      description: `${selected.name} Plan Subscription`,
+      image: 'https://example.com/logo.png', // Add your logo here
+      handler: function (response) {
+        alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
+        // You can handle post-payment actions here, like saving the transaction to the database
+      },
+      prefill: {
+        name: userName,
+        email: 'user@example.com', // Add user email if needed
+        contact: '9999999999', // Add user contact if needed
+      },
+      theme: {
+        color: '#3399cc',
+      },
     };
 
-    try {
-      // Store transaction details in backend
-      const response = await fetch('http://localhost:5000/api/transactions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(transaction),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to store transaction');
-      }
-
-      // Generate UPI link
-      const upiLink = `upi://pay?pa=${upiId}&pn=AyushHirenKarani&am=${selected.price / 100}&cu=INR&tid=${transaction.id}&tn=${selected.name}%20Plan%20Subscription`;
-      window.location.href = upiLink;
-    } catch (error) {
-      console.error('Error storing transaction:', error);
-      alert('There was an error processing your payment. Please try again.');
-    }
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   };
 
   return (
@@ -109,36 +101,31 @@ export default function PaymentGateway() {
       <Card className="w-full max-w-md mx-auto bg-white shadow-xl">
         <CardHeader className="bg-blue-500 text-white">
           <CardTitle className="text-2xl">Payment Details</CardTitle>
-          <CardDescription className="text-blue-100">Enter your payment information securely</CardDescription>
+          <CardDescription className="text-blue-100">Enter your name to proceed with payment</CardDescription>
         </CardHeader>
         <CardContent className="mt-4">
           <form>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="name" className="text-blue-700">Name</Label>
-                <Input 
-                  id="name" 
-                  placeholder="John Doe" 
-                  className="border-blue-300 focus:border-blue-500" 
+                <input
+                  id="name"
                   value={userName}
-                  onChange={(e) => setUserName(e.target.value)} // Update state on change
-                />
-              </div>
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="upi-id" className="text-blue-700">UPI ID</Label>
-                <Input 
-                  id="upi-id" 
-                  placeholder="example@upi" 
-                  className="border-blue-300 focus:border-blue-500" 
-                  value={upiId}
-                  onChange={(e) => setUpiId(e.target.value)} // Update state on change
+                  onChange={(e) => setUserName(e.target.value)}
+                  placeholder="name"
+                  className="border-blue-300 focus:border-blue-500"
                 />
               </div>
             </div>
           </form>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-blue-500 hover:bg-blue-600 text-lg" onClick={generateUPILink}>Pay via UPI</Button>
+          <Button
+            className="w-full bg-blue-500 hover:bg-blue-600 text-lg"
+            onClick={handlePayment}
+          >
+            Pay ₹{selected.price / 100} via Razorpay
+          </Button>
         </CardFooter>
       </Card>
 
