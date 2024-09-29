@@ -1,20 +1,20 @@
 import React from "react";
 
-const TextSign = () => {
+const Interview = () => {
     const openAngularApp = () => {
-      window.location.href = 'http://localhost:4200'; 
+      window.location.href = 'http://localhost:3000'; 
     };
 
     return (
       <div className="flex justify-center">
-        <h1>Welcome to the TextSign Component</h1>
+        <h1>Welcome to the SignText Component</h1>
         {/* Button to open Angular app */}
         <button onClick={openAngularApp} >
-          Open Angular Project
+          Open Interview
         </button>
       </div>
     );
   }
 
-  export default TextSign;
+  export default Interview;
 
