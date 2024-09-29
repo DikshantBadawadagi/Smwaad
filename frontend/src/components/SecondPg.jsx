@@ -19,8 +19,8 @@ const solutions = [
   { label: 'Sign-ify', link: 'http://localhost:4200' },
   { label: 'Text-ify', link: 'http://127.0.0.1:5000/dashboard' },
   { label: 'Community', link: '/community' },
-  { label: 'Learning Module', link: 'http://localhost:3000' },
-  { label: 'SignLearner', link: 'http://localhost:3000' }
+  { label: 'Learning Module', link: 'http://localhost:3001' },
+  { label: 'SignLearner', link: 'http://localhost:3002' }
 ];
 
 const statistics = [
