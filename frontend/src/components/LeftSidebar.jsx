@@ -40,11 +40,11 @@ const LeftSidebar = () => {
         } else if (textType === "Create") {
             setOpen(true);
         } else if (textType === "Profile") {
-            navigate(`/profile/${user?._id}`);
+            navigate(`/community/profile/${user?._id}`);
         } else if (textType === "Home") {
             navigate("/");
         } else if (textType === 'Messages') {
-            navigate("/chat");
+            navigate("/community/chat");
         }
     }
 
