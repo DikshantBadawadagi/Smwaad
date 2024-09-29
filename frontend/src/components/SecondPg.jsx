@@ -12,7 +12,16 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const solutions = ['Video Conferencing', 'Ishaara -WebExtension', 'Sign-ify','Text-ify','Community', 'Learning Module']
+// const solutions = ['Video Conferencing', 'Ishaara -WebExtension', 'Sign-ify','Text-ify','Community', 'Learning Module']
+const solutions = [
+  { label: 'Video Conferencing', link: 'http://localhost:3000' },
+  { label: 'Ishaara - WebExtension', link: 'brave://extensions/?id=ghfjgddfjaeklpgopidhnppiaifdpoak' },
+  { label: 'Sign-ify', link: 'http://localhost:4200' },
+  { label: 'Text-ify', link: 'http://127.0.0.1:5000/dashboard' },
+  { label: 'Community', link: '/community' },
+  { label: 'Learning Module', link: 'http://localhost:3000' }
+];
+
 const statistics = [
   { name: 'Employment Rate', value: 48 },
   { name: 'Higher Education', value: 18 },
@@ -119,10 +128,10 @@ const handleClick = () => {
       {solutions.map((solution, index) => (
         <a
           key={index}
-          href="#"
+          href={solution.link}
           className="text-white text-lg font-semibold hover:text-[#FFDAB9] transition-colors duration-300 relative"
         >
-          {solution}
+          {solution.label}
           <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#FFDAB9] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
         </a>
       ))}
