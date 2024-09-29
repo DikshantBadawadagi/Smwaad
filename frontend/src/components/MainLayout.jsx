@@ -4,7 +4,7 @@ import LeftSidebar from './LeftSidebar'
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className='bg-gradient-to-b from-purple-50 to-indigo-50'>
          <LeftSidebar/>
         <div>
             <Outlet/>
