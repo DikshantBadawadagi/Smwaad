@@ -33,7 +33,7 @@ export default function PaymentGateway() {
     }
 
     const options = {
-      key: 'YOUR_RAZORPAY_KEY', // Replace with your Razorpay Key ID
+      key: 'rzp_test_tGBLVAVKSiCDkL', // Replace with your Razorpay Key ID
       amount: selected.price, // Amount is in paise (i.e., 100 = ₹1)
       currency: 'INR',
       name: 'Sign Language Learning',
