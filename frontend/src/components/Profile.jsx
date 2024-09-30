@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import useGetUserProfile  from '@/hooks/useGetUserProfile'
+import useGetUserProfile from '@/hooks/useGetUserProfile';
 import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Button } from '@/components/ui/button'
@@ -31,40 +31,40 @@ const Profile = () => {
   ]
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col md:flex-row gap-8 mb-12">
-        <Avatar className="h-32 w-32 md:h-40 md:w-40">
+    <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
+        <Avatar className="h-40 w-40 ring-4 ring-gray-200">
           <AvatarImage src={userProfile?.profilePicture} alt="Profile" />
           <AvatarFallback>{userProfile?.username?.slice(0, 2).toUpperCase()}</AvatarFallback>
         </Avatar>
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-4 flex-wrap">
-            <h1 className="text-2xl font-bold">{userProfile?.username}</h1>
+        <div className="flex flex-col gap-6 text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <h1 className="text-3xl font-bold">{userProfile?.username}</h1>
             {isLoggedInUserProfile ? (
-              <>
-                <Link to="/account/edit">
-                  <Button variant="outline">Edit profile</Button>
+              <div className="flex gap-2">
+                <Link to="/community/account/edit">
+                  <Button variant="outline" size="sm">Edit profile</Button>
                 </Link>
-                <Button variant="outline">View archive</Button>
-                <Button variant="outline">Ad tools</Button>
-              </>
+                <Button variant="outline" size="sm">View archive</Button>
+                <Button variant="outline" size="sm">Ad tools</Button>
+              </div>
             ) : (
-              <>
-                <Button variant={isFollowing ? "outline" : "default"}>
+              <div className="flex gap-2">
+                <Button variant={isFollowing ? "outline" : "default"} size="sm">
                   {isFollowing ? 'Unfollow' : 'Follow'}
                 </Button>
-                <Button variant="outline">Message</Button>
-              </>
+                <Button variant="outline" size="sm">Message</Button>
+              </div>
             )}
           </div>
-          <div className="flex gap-6 text-sm">
+          <div className="flex justify-center md:justify-start gap-6 text-sm">
             <span><strong>{userProfile?.posts?.length}</strong> posts</span>
             <span><strong>{userProfile?.followers?.length}</strong> followers</span>
             <span><strong>{userProfile?.following?.length}</strong> following</span>
           </div>
           <div className="space-y-2">
             <p className="font-medium">{userProfile?.bio || 'No bio available'}</p>
-            <Badge variant="secondary" className="flex items-center w-fit">
+            <Badge variant="secondary" className="flex items-center mx-auto md:mx-0 w-fit">
               <AtSign className="h-4 w-4 mr-1" />
               {userProfile?.username}
             </Badge>
@@ -81,8 +81,8 @@ const Profile = () => {
             <button
               key={tab.id}
               onClick={() => handleTabChange(tab.id)}
-              className={`flex items-center gap-2 px-4 py-3 text-sm font-medium ${
-                activeTab === tab.id ? 'border-t-2 border-black' : ''
+              className={`flex items-center gap-2 px-4 py-3 text-sm font-medium transition-colors ${
+                activeTab === tab.id ? 'border-t-2 border-black text-black' : 'text-gray-500 hover:text-black'
               }`}
             >
               <tab.icon className="h-4 w-4" />
@@ -92,11 +92,11 @@ const Profile = () => {
         </div>
         <div className="grid grid-cols-3 gap-4 mt-8">
           {displayedPosts?.map((post) => (
-            <div key={post._id} className="relative group aspect-square">
+            <div key={post._id} className="relative group aspect-square overflow-hidden rounded-lg">
               <img
                 src={post.image}
                 alt="Post"
-                className="w-full h-full object-cover rounded-md"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="flex items-center space-x-6 text-white">
