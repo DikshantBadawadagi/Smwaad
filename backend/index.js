@@ -7,6 +7,8 @@ import userRoute from "./routes/user.route.js";
 import postRoute from "./routes/post.route.js";
 import messageRoute from "./routes/message.route.js";
 import { app, server } from "./socket/socket.js";
+import questionRouters from "./routes/quiz.js"
+import resultRouters from "./routes/result.js"
 import path from "path";
  
 dotenv.config();
@@ -30,7 +32,8 @@ app.use(cors(corsOptions));
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/post", postRoute);
 app.use("/api/v1/message", messageRoute);
-
+app.use('/questions',questionRouters);
+app.use('/results',resultRouters);
 
 app.use(express.static(path.join(__dirname, "/frontend/dist")));
 app.get("*", (req,res)=>{
