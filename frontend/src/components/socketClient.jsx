@@ -18,8 +18,7 @@ const SocketClient = () => {
         });
         console.log("hello1")
         // Listen for the room:create event
-        socketRef.current.on('room:create', (data) => {
-            
+        socketRef.current.on('room:created', (data) => {
             console.log('Room created:', data);
             setResponse(`Room created: ${data.room} for ${data.email}`);
             console.log("hello")
