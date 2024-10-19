@@ -140,7 +140,7 @@ const handleClick = () => {
       </button>
 
       <button
-        onClick={() => (window.location.href = 'brave://extensions/?id=ghfjgddfjaeklpgopidhnppiaifdpoak')}
+        onClick={() => (window.open('brave://extensions/?id=ghfjgddfjaeklpgopidhnppiaifdpoak'))}
         className="text-gray-500 text-lg font-semibold"
         disabled
       >
