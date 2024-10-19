@@ -173,17 +173,13 @@ const Landingpage = () => {
               <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#66B2FF] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
             </button>
 
-            <button
-              onClick={() =>
-                (window.location.href =
-                  "brave://extensions/?id=ghfjgddfjaeklpgopidhnppiaifdpoak")
-              }
-              className="bg-white text-black text-lg font-semibold border border-transparent hover:border-[#66B2FF] hover:text-[#66B2FF] transition-colors duration-300 relative py-2 px-4 rounded-lg shadow-md hover:shadow-lg"
-              disabled
-            >
-              Ishaara-WebExtension
-              <span className="bg-white absolute -bottom-1 left-0 right-0 h-1 bg-[#66B2FF] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-            </button>
+      <button
+        onClick={() => (window.location.href = 'brave://extensions/?id=ghfjgddfjaeklpgopidhnppiaifdpoak')}
+        className="text-gray-500 text-lg font-semibold"
+        disabled
+      >
+        Ishaara-WebExtension 
+      </button>
 
             <button
               onClick={() => (window.location.href = "http://localhost:4200")}
