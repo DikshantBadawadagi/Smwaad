@@ -7,21 +7,26 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useNavigate } from 'react-router-dom';
+import C1 from '../assets/C1.jpg'
+import C2 from '../assets/C2.jpg'
+import C3 from '../assets/C3.jpg'
+import C4 from '../assets/C4.jpg'
+import C5 from '../assets/C5.jpg'
 //empowering 
 
 
 
 
-// const solutions = ['Video Conferencing', 'Ishaara -WebExtension', 'Sign-ify','Text-ify','Community', 'Learning Module']
-const solutions = [
-  { label: 'Video Conferencing', link: 'http://localhost:3000' },
-  { label: 'Ishaara - WebExtension', link: 'brave://extensions/?id=ghfjgddfjaeklpgopidhnppiaifdpoak' },
-  { label: 'Sign-ify', link: 'http://localhost:4200' },
-  { label: 'Text-ify', link: 'http://127.0.0.1:5000/dashboard' },
-  { label: 'Community', link: '/community' },
-  { label: 'Learning Module', link: 'http://localhost:3001' },
-  { label: 'SignLearner', link: 'http://localhost:3002' }
-];
+ const solutions = ['Video Conferencing', 'Ishaara-WebExtension', 'Signify','Textify','Community', 'E-school']
+// const solutions = [
+//   { label: 'Video Conferencing', link: 'http://localhost:3000' },
+//   { label: 'Ishaara - WebExtension', link: 'brave://extensions/?id=ghfjgddfjaeklpgopidhnppiaifdpoak' },
+//   { label: 'Sign-ify', link: 'http://localhost:4200' },
+//   { label: 'Text-ify', link: 'http://127.0.0.1:5000/dashboard' },
+//   { label: 'Community', link: '/community' },
+//   { label: 'Learning Module', link: 'http://localhost:3001' },
+//   { label: 'SignLearner', link: 'http://localhost:3002' }
+// ];
 
 const statistics = [
   { name: 'Employment Rate', value: 48 },
@@ -32,17 +37,17 @@ const statistics = [
 
 const carouselImages = [
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carousel2-6z7xYWiBOROtHaQSQ5oCQ7QETkEGKD.jpg',
+    src: C1,
     alt: 'A humanoid robot examining a cardboard box',
     caption: 'Innovative AI solutions for communication challenges',
   },
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carousel3-PoBimWFUMtjYgCYWoys4IbUMhgEpq7.jpg',
+    src: C2,
     alt: 'A group of smiling Indian women giving thumbs up',
     caption: 'Empowering communities through inclusive technology',
   },
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carousel1-kT75q6cTMCyZ5eDKXBh5kw0LZjgOVi.jpg',
+    src: C3,
     alt: 'A young girl using sign language while sitting at a desk with a laptop',
     caption: 'Breaking barriers in education and communication',
   },
@@ -50,7 +55,7 @@ const carouselImages = [
 
 const features = [
   { title: 'Sign Language Translator', description: 'Instantly translate sign language to text and vice versa.' },
-  { title: 'Text-to-Speech', description: 'Convert written text into natural-sounding speech.' },
+  { title: 'Text-to-Speech', description: 'Convert written text into natural-sounding speech effortlessly.' },
   { title: 'Speech-to-Text', description: 'Accurately transcribe spoken words into written text.' },
   { title: 'Visual Alerts', description: 'Receive important notifications through visual cues.' },
   { title: 'Live Captioning', description: 'Real-time captioning for videos and live conversations.' },
@@ -123,20 +128,66 @@ const handleClick = () => {
       <nav className="bg-gradient-to-r from-[#FF8C69] to-[#FFDAB9] p-4 shadow-lg fixed w-full z-10">
   <div className="container mx-auto flex justify-between items-center">
     <h1 className="text-4xl font-extrabold text-white transition-all duration-300 hover:scale-105">
-      DeafMuteApp
+      Smwaad
     </h1>
     <div className="hidden md:flex space-x-8">
-      {solutions.map((solution, index) => (
-        <a
-          key={index}
-          href={solution.link}
-          className="text-white text-lg font-semibold hover:text-[#FFDAB9] transition-colors duration-300 relative"
-        >
-          {solution.label}
-          <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#FFDAB9] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-        </a>
-      ))}
+      <button
+        onClick={() => (window.location.href = 'http://localhost:3000')}
+        className="text-white text-lg font-semibold hover:text-[#FFDAB9] transition-colors duration-300 relative"
+      >
+        Video Conferencing
+        <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#FFDAB9] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+      </button>
+
+      <button
+        onClick={() => (window.location.href = 'brave://extensions/?id=ghfjgddfjaeklpgopidhnppiaifdpoak')}
+        className="text-gray-500 text-lg font-semibold"
+        disabled
+      >
+        Ishaara-WebExtension 
+      </button>
+
+      <button
+        onClick={() => (window.location.href = 'http://localhost:4200')}
+        className="text-white text-lg font-semibold hover:text-[#FFDAB9] transition-colors duration-300 relative"
+      >
+        Signify
+        <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#FFDAB9] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+      </button>
+
+      <button
+        onClick={() => (window.location.href = 'http://127.0.0.1:5000/dashboard')}
+        className="text-white text-lg font-semibold hover:text-[#FFDAB9] transition-colors duration-300 relative"
+      >
+        Textify
+        <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#FFDAB9] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+      </button>
+
+      <button
+        onClick={() => (window.location.href = '/community')}
+        className="text-white text-lg font-semibold hover:text-[#FFDAB9] transition-colors duration-300 relative"
+      >
+        Community
+        <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#FFDAB9] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+      </button>
+
+      <button
+        onClick={() => (window.location.href = 'http://localhost:3001')}
+        className="text-white text-lg font-semibold hover:text-[#FFDAB9] transition-colors duration-300 relative"
+      >
+        Learning Module
+        <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#FFDAB9] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+      </button>
+
+      <button
+        onClick={() => (window.location.href = 'http://localhost:3002')}
+        className="text-white text-lg font-semibold hover:text-[#FFDAB9] transition-colors duration-300 relative"
+      >
+        SignLearner
+        <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#FFDAB9] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+      </button>
     </div>
+    
     <button
       className="md:hidden text-white focus:outline-none"
       onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -178,13 +229,13 @@ const handleClick = () => {
             transition={{ duration: 0.5, delay: 0.2 }} // Adding a slight delay to sync with page load
             className="bg-[#FFDAB9] bg-opacity-80 p-8 rounded-lg text-gray-800"
           >
-            <h2 className="text-4xl font-bold mb-4">Welcome to DeafMuteApp</h2>
+            <h2 className="text-4xl font-bold mb-4">Welcome to Smwaad</h2>
             <div className="text-2xl mb-8">
               <Typewriter
                 words={['Empowering communication', 'Breaking barriers', 'Connecting worlds']}
                 loop={0}
                 cursor
-                cursorStyle="_"
+                cursorStyle="|"
                 typeSpeed={70}
                 deleteSpeed={50}
                 delaySpeed={1000}
@@ -214,7 +265,7 @@ const handleClick = () => {
               transition={{ duration: 0.5 }}
               className="text-5xl font-bold mb-12 text-center text-gray-800"
             >
-              {count.toLocaleString()} people impacted worldwide
+              {count.toLocaleString()}+ people are Deaf and Mute WorldWide
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -239,7 +290,7 @@ const handleClick = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                   className="rounded-lg shadow-lg"
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/humanoid-6z7xYWiBOROtHaQSQ5oCQ7QETkEGKD.jpg"
+                  src={C4}
                   alt="Humanoid robot examining cardboard box"
                 />
                 <motion.img
@@ -247,7 +298,7 @@ const handleClick = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                   className="rounded-lg shadow-lg"
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/thumbsup-girls-PoBimWFUMtjYgCYWoys4IbUMhgEpq7.jpg"
+                  src={C5}
                   alt="Smiling women giving thumbs up"
                 />
               </div>
@@ -256,12 +307,12 @@ const handleClick = () => {
         </div>
 
         <div className="bg-[#FFDAB9] py-24">
-          <div className="container mx-auto p-4">
+          <div className="container  mx-auto p-4">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-4xl font-bold mb-12 text-center text-gray-800"
+              className="text-4xl font-bold mb-12 text-center text-white"
             >
               Our Innovative Solutions
             </motion.h2>
@@ -273,7 +324,7 @@ const handleClick = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="p-6 bg-white rounded-lg shadow-lg"
+                  className="p-12 mx-4 my-6 bg-white rounded-lg shadow-lg "
                 >
                   <h3 className="text-2xl font-bold mb-4 text-[#FF8C69]">{feature.title}</h3>
                   <p className="text-gray-700">{feature.description}</p>

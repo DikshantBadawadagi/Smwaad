@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { useGetUserProfile } from '@/hooks/useGetUserProfile'
+import useGetUserProfile  from '@/hooks/useGetUserProfile'
 import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Button } from '@/components/ui/button'
@@ -32,7 +32,7 @@ const Profile = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col bg-white md:flex-row gap-8 mb-12">
+      <div className="flex flex-col md:flex-row gap-8 mb-12">
         <Avatar className="h-32 w-32 md:h-40 md:w-40">
           <AvatarImage src={userProfile?.profilePicture} alt="Profile" />
           <AvatarFallback>{userProfile?.username?.slice(0, 2).toUpperCase()}</AvatarFallback>
