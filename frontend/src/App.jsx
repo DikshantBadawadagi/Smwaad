@@ -19,8 +19,7 @@ import SignText from './components/SignText'
 import Whiteboard from './components/Whiteboard'
 import Interview from './components/Interview'
 import Learning from './components/Learning-module'
-
-
+import SocketClient from './components/socketClient'
 // const browserRouter = createBrowserRouter([
 //   {
 //     path: "/",
@@ -158,6 +157,7 @@ function App() {
   return (
     <>
       <RouterProvider router={browserRouter} />
+      <SocketClient />
     </>
   )
 }

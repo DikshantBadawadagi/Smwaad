@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Heart, Home, LogOut, MessageCircle, PlusSquare, Search, TrendingUp } from 'lucide-react'
+import { Heart, Home, LogOut, MessageCircle, PlusSquare, Search, TrendingUp, Users } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { toast } from 'sonner'
 import axios from 'axios'
@@ -44,6 +44,8 @@ const LeftSidebar = () => {
             navigate("/");
         } else if (textType === 'Messages') {
             navigate("/community/chat");
+        } else if (textType === 'Community') {
+            navigate("/community");
         }
     }
 
@@ -51,6 +53,7 @@ const LeftSidebar = () => {
         { icon: <Home className="text-indigo-600" />, text: "Home" },
         { icon: <Search className="text-indigo-600" />, text: "Search" },
         { icon: <TrendingUp className="text-indigo-600" />, text: "Explore" },
+        { icon: <Users className="text-indigo-600" />, text: "Community" },
         { icon: <MessageCircle className="text-indigo-600" />, text: "Messages" },
         { icon: <Heart className="text-indigo-600" />, text: "Notifications" },
         { icon: <PlusSquare className="text-indigo-600" />, text: "Create" },
