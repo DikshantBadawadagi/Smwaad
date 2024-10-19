@@ -1,6 +1,9 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSocket } from "../context/SocketProvider";
+import C1 from './C1.png'
+import LeftImage from './C2.png'; // Add your left side image
+import RightImage from './C3.png';
 
 const LobbyScreen = () => {
   const [email, setEmail] = useState("");
@@ -65,18 +68,25 @@ const LobbyScreen = () => {
   }, [socket, handleRoomCreated, handleRoomJoined, handleJoinFailed]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-yellow-300 via-yellow-400 to-orange-400">
-      <div className="w-full max-w-lg bg-white rounded-lg shadow-md p-8">
-        <h1 className="text-4xl font-bold text-center text-orange-500 mb-8">
+    <div className="flex items-center justify-center min-h-screen" style={{ backgroundColor: '#205afc' }}>
+      {/* Left Image */}
+      <div className="hidden md:block">
+        <img src={LeftImage} className="w-48 h-auto" alt="Left" />
+      </div>
+      
+      {/* Main Content */}
+      <div className="flex flex-col items-center justify-center space-y-6 mx-8">
+        <nav className="bg-[#205afc] p-4 fixed top-0 left-0 w-full">
+          <h1 className="text-white text-2xl font-bold">Swammad</h1>
+        </nav>
+        <h1 className="text-4xl font-bold text-white text-center mb-8 mt-4">
           Welcome to the Lobby
         </h1>
-
+        <img src={C1} className="w-full h-50 object-cover mb-8" alt="Center Image" />
+        
         <form onSubmit={isCreatingRoom ? handleCreateRoom : handleJoinRoom} className="space-y-6">
           <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
+            <label htmlFor="email" className="block text-2xl font-medium text-white mb-2">
               Email ID
             </label>
             <input
@@ -84,16 +94,13 @@ const LobbyScreen = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-400 focus:border-yellow-300"
+              className="w-full px-6 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-400 focus:border-yellow-300 text-lg"
               placeholder="Enter your email"
               required
             />
           </div>
           <div>
-            <label
-              htmlFor="room"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
+            <label htmlFor="room" className="block text-2xl font-medium text-white mb-2">
               Room Number
             </label>
             <input
@@ -101,16 +108,13 @@ const LobbyScreen = () => {
               id="room"
               value={room}
               onChange={(e) => setRoom(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-400 focus:border-yellow-300"
+              className="w-full px-6 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-400 focus:border-yellow-300 text-lg"
               placeholder="Enter room number"
               required
             />
           </div>
           <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
+            <label htmlFor="password" className="block text-2xl font-medium text-white mb-2">
               Password
             </label>
             <input
@@ -118,7 +122,7 @@ const LobbyScreen = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-400 focus:border-yellow-300"
+              className="w-full px-6 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-400 focus:border-yellow-300 text-lg"
               placeholder="Enter room password"
               required
             />
@@ -140,8 +144,15 @@ const LobbyScreen = () => {
           </div>
         </form>
       </div>
+
+      {/* Right Image */}
+      <div className="hidden md:block">
+        <img src={RightImage} className="w-48 h-auto" alt="Right" />
+      </div>
     </div>
   );
+  
+  
 };
 
 export default LobbyScreen;

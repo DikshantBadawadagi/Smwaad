@@ -4,6 +4,7 @@ import ReactPlayer from "react-player";
 import peer from "../service/peer";
 import { useSocket } from "../context/SocketProvider";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import C4 from './C4.png';
 
 
 
@@ -196,12 +197,15 @@ const RoomPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-yellow-300 to-orange-300 flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen bg-[#205afc] flex flex-col items-center justify-center p-6">
+      {/* Add the image at the top */}
+      <img src={C4} alt="C4 Image" className="w-100%  mb-4" />
+      
       <div className="w-full max-w-4xl bg-white rounded-lg shadow-md p-8">
-        <h1 className="text-4xl font-bold text-center text-yellow-500 mb-4">
+        <h1 className="text-4xl font-bold text-center text-black mb-4">
           Room Page
         </h1>
-        <h4 className="text-lg text-center text-gray-700 mb-6">
+        <h4 className="text-lg text-center text-black mb-6">
           {remoteSocketId
             ? "Connected to the room"
             : "Waiting for others to join..."}
@@ -226,7 +230,7 @@ const RoomPage = () => {
           <div className="flex justify-between w-full">
             {myStream && (
               <div className="w-1/2 pr-2">
-                <h1 className="text-2xl font-semibold text-gray-800 mb-2">
+                <h1 className="text-2xl font-semibold text-white mb-2">
                   My Stream
                 </h1>
                 <ReactPlayer
@@ -241,7 +245,7 @@ const RoomPage = () => {
             )}
             {remoteStream && (
               <div className="w-1/2 pl-2">
-                <h1 className="text-2xl font-semibold text-gray-800 mb-2">
+                <h1 className="text-2xl font-semibold text-white mb-2">
                   Remote Stream
                 </h1>
                 <ReactPlayer
@@ -263,17 +267,17 @@ const RoomPage = () => {
               End Stream
             </button>
           )}
-          
+
           {/* Shared Transcript */}
           <div className="mt-8 w-full">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-2">Shared Transcript</h2>
+            <h2 className="text-2xl font-semibold text-white mb-2">Shared Transcript</h2>
             <div className="border p-4 rounded-lg bg-gray-100 shadow-sm min-h-[100px] w-full mb-4">
               <p className="text-gray-700">{transcript || "No speech detected."}</p>
             </div>
             <div className="flex justify-center space-x-4">
               <button
                 onClick={toggleListening}
-                className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out`}
+                className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out"
               >
                 {listening ? 'Pause Listening' : 'Resume Listening'}
               </button>
@@ -288,7 +292,7 @@ const RoomPage = () => {
 
           {/* Chat Feature */}
           <div className="mt-8 w-full">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-2">Chat</h2>
+            <h2 className="text-2xl font-semibold text-white mb-2">Chat</h2>
             <div className="border p-4 rounded-lg bg-gray-100 shadow-sm h-[200px] w-full mb-4 overflow-y-auto">
               {messages.map((msg, index) => (
                 <p key={index} className="text-gray-700">{`${msg.sender}: ${msg.message}`}</p>
@@ -314,6 +318,7 @@ const RoomPage = () => {
       </div>
     </div>
   );
+  
 };
 
 export default RoomPage;
