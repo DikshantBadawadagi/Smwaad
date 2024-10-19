@@ -20,7 +20,6 @@ import C3 from "../assets/C3.jpg";
 import C4 from "../assets/C4.jpg";
 import C5 from "../assets/C5.jpg";
 //empowering
-
 const solutions = [
   "Video Conferencing",
   "Ishaara-WebExtension",
@@ -161,16 +160,23 @@ const Landingpage = () => {
       <nav className="bg-[#BFD3E6] bg-opacity-80 p-8 rounded-lg text-gray-800bg-transparent p1-10 shadow-lg fixed w-full z-10">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="p1-20 text-6xl font-extrabold text-black transition-all duration-300 hover:scale-105 pr-4">
-            Swaad
+            Smwaad
           </h1>
 
           <div className="hidden md:flex space-x-8">
-            <button
+            {/* <button
               onClick={() => (window.location.href = "http://localhost:3000")}
               className="bg-white text-black text-lg font-semibold border border-transparent hover:border-[#66B2FF] hover:text-[#66B2FF] transition-colors duration-300 relative py-2 px-4 rounded-lg shadow-md hover:shadow-lg"
             >
               Video Conferencing
               <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#66B2FF] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+            </button> */}
+              <button
+              onClick={() => (window.location.href = "/lobby")}
+              className="bg-white text-black text-lg font-semibold border border-transparent hover:border-[#66B2FF] hover:text-[#66B2FF] transition-colors duration-300 relative py-2 px-4 rounded-lg shadow-md hover:shadow-lg"
+            >
+              Video Conferencing
+              <span className="bg-white absolute -bottom-1 left-0 right-0 h-1 bg-[#66B2FF] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
             </button>
 
       <button

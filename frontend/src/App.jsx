@@ -20,6 +20,10 @@ import Whiteboard from './components/Whiteboard'
 import Interview from './components/Interview'
 import Learning from './components/Learning-module'
 import SocketClient from './components/socketClient'
+import RoomJoin from './components/Joinroom'
+import UserCall from './components/CallTest'
+import LobbyScreen from './components/Lobby'
+import RoomPage from './components/Room'
 // const browserRouter = createBrowserRouter([
 //   {
 //     path: "/",
@@ -65,6 +69,14 @@ const browserRouter = createBrowserRouter([
   {
     path: "/", // Root route
     element: <ProtectedRoutes><Landingpage /></ProtectedRoutes>,
+  },
+  {
+    path: "/lobby",
+    element: <ProtectedRoutes><LobbyScreen/></ProtectedRoutes>
+  },
+  {
+    path: "/room/:roomId",
+    element: <ProtectedRoutes><RoomPage/></ProtectedRoutes>
   },
   {
     path: "/community", // Community route
@@ -157,7 +169,7 @@ function App() {
   return (
     <>
       <RouterProvider router={browserRouter} />
-      <SocketClient />
+      
     </>
   )
 }
