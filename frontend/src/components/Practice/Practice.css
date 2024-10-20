@@ -1,0 +1,67 @@
+.exercises {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10rem;
+  gap: 6rem;
+  flex-wrap: wrap;
+}
+
+.exercises .card {
+  display: flex;
+  max-width: 600px; /* Increased width to make it more rectangular */
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 0.5em;
+  color: black;
+  background-color: white;
+  box-shadow: 0 29px 38px -15px rgb(0 0 0 / 43%);
+  transition: transform 0.2s;
+}
+
+.exercises .card:hover {
+  transform: scale(1.05);
+}
+
+.exercises .card-img {
+  width: 300px;
+  height: 280px; /* Adjusted height to show more of the image */
+  border-radius: 0.3em;
+  background-position: center;
+  background-size: contain; /* Ensures the full image is shown inside the card */
+  background-repeat: no-repeat;
+}
+
+.card p .exercises-link {
+  color: black;
+}
+
+.exercises .card:nth-of-type(1) .card-img {
+  background-image: url('./before_after_logo.png');
+}
+
+.exercises .card:nth-of-type(2) .card-img {
+  background-image: url('./greater_smaller_logo.jpg');
+}
+
+.exercises .card:nth-of-type(3) .card-img {
+  background-image: url("./maths.jpg");
+}
+
+.exercises .card:nth-of-type(4) .card-img {
+  background-image: url('https://images.unsplash.com/photo-1496429862132-5ab36b6ae330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80');
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .exercises {
+      flex-direction: column;
+      gap: 2rem;
+  }
+
+  .exercises .card {
+      max-width: 100%; /* Full width on smaller screens */
+  }
+}

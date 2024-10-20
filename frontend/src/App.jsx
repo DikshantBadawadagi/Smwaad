@@ -24,6 +24,8 @@ import RoomJoin from './components/Joinroom'
 import UserCall from './components/CallTest'
 import LobbyScreen from './components/Lobby'
 import RoomPage from './components/Room'
+import Practice from './components/Practice/Practice.jsx'
+import Sum from './components/Practice/Sum/Sum.jsx'
 // const browserRouter = createBrowserRouter([
 //   {
 //     path: "/",
@@ -120,6 +122,47 @@ const browserRouter = createBrowserRouter([
       }
     ]
   },
+    // Routes from Project 2
+    {
+      path: "/exercises",
+      element: <ProtectedRoutes><Practice /></ProtectedRoutes>
+    },
+    {
+      path: "/bf_af",
+      element: <ProtectedRoutes></ProtectedRoutes>
+    },
+    {
+      path: "/gr_sm",
+      element: <ProtectedRoutes></ProtectedRoutes>
+    },
+    {
+      path: "/sum",
+      element: <ProtectedRoutes><Sum/></ProtectedRoutes>
+    },
+    {
+      path: "/test",
+      element: <ProtectedRoutes></ProtectedRoutes>
+    },
+    {
+      path: "/form",
+      element: <ProtectedRoutes></ProtectedRoutes>
+    },
+    {
+      path: "/teacher",
+      element: <ProtectedRoutes></ProtectedRoutes>
+    },
+    {
+      path: "/scorecard",
+      element: <ProtectedRoutes></ProtectedRoutes>
+    },
+    {
+      path: "/dashboard",
+      element: <ProtectedRoutes></ProtectedRoutes>
+    },
+    {
+      path: "/questions",
+      element: <ProtectedRoutes></ProtectedRoutes>
+    },
   {
     path: "/login",
     element: <Login />
