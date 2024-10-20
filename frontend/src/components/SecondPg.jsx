@@ -159,11 +159,12 @@ const Landingpage = () => {
     <div className="min-h-screen text-gray-800">
       <nav className="bg-[#BFD3E6] bg-opacity-80 p-8 rounded-lg text-gray-800bg-transparent p1-10 shadow-lg fixed w-full z-10">
         <div className="container mx-auto flex justify-between items-center">
+          <div>
           <h1 className="p1-20 text-6xl font-extrabold text-black transition-all duration-300 hover:scale-105 pr-4">
             Smwaad
           </h1>
-
-          <div className="hidden md:flex space-x-8">
+          </div>
+          <div className="hidden md:flex space-x-8 ">
             {/* <button
               onClick={() => (window.location.href = "http://localhost:3000")}
               className="bg-white text-black text-lg font-semibold border border-transparent hover:border-[#66B2FF] hover:text-[#66B2FF] transition-colors duration-300 relative py-2 px-4 rounded-lg shadow-md hover:shadow-lg"
@@ -179,16 +180,10 @@ const Landingpage = () => {
               <span className="bg-white absolute -bottom-1 left-0 right-0 h-1 bg-[#66B2FF] scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
             </button>
 
-      <button
-        onClick={() => (window.location.href = 'brave://extensions/?id=ghfjgddfjaeklpgopidhnppiaifdpoak')}
-        className="text-gray-500 text-lg font-semibold"
-        disabled
-      >
-        Ishaara-WebExtension 
-      </button>
+      
 
             <button
-              onClick={() => (window.location.href = "http://localhost:4200")}
+              onClick={() => (window.location.href = "https://multilingualtexttosignlanguage-ox3j.vercel.app/")}
               className="bg-white text-black text-lg font-semibold border border-transparent hover:border-[#66B2FF] hover:text-[#66B2FF] transition-colors duration-300 relative py-2 px-4 rounded-lg shadow-md hover:shadow-lg"
             >
               Signify
@@ -222,7 +217,7 @@ const Landingpage = () => {
             </button>
 
             <button
-              onClick={() => (window.location.href = "http://localhost:3002")}
+              onClick={() => (window.location.href = "https://signavatar.vercel.app/")}
               className="bg-white text-black text-lg font-semibold border border-transparent hover:border-[#66B2FF] hover:text-[#66B2FF] transition-colors duration-300 relative py-2 px-4 rounded-lg shadow-md hover:shadow-lg"
             >
               SignLearner
